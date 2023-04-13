@@ -6,4 +6,7 @@ return [
             'title' => 'Admin'
         ]
     ],
+    'index' => [
+        'too_many_result' => 'Please specify your condition'
+    ]
 ];
