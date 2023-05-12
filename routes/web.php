@@ -1,6 +1,6 @@
 <?php
 
-use Ezegyfa\LaravelHelperMethods\Crm\Controllers\BlueAdminController;
+use App\Http\Controllers\AdminController;
 
 use Illuminate\Support\Facades\Route;
 
@@ -19,5 +19,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-$blueAdminController = new BlueAdminController();
-$blueAdminController->initializeRoutes();
+$adminController = new AdminController();
+$adminController->initializeRoutes();
