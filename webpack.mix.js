@@ -1,5 +1,7 @@
 const mix = require('laravel-mix');
 const path = require('path');
+const webpack = require('webpack')
+
 mix.webpackConfig({
     module: {
         rules: [
@@ -22,7 +24,18 @@ mix.webpackConfig({
                 "resources/sass"
             )
         }
-    }
+    },
+    plugins: [
+        new webpack.IgnorePlugin({
+            resourceRegExp: /^.*blue-admin-vue-components.*$/,
+        }),
+        new webpack.IgnorePlugin({
+            resourceRegExp: /^.*helper-vue-components.*$/,
+        }),
+        new webpack.IgnorePlugin({
+            resourceRegExp: /^\.\/bootstrap$/,
+        })
+    ]
 });
 
 mix.js('resources/js/app.js', 'public/js')
